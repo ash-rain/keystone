@@ -56,6 +56,7 @@
     "multer": "0.1.8",
     "numeral": "1.5.3",
     "object-assign": "4.1.0",
+    "postinstall-build": "^0.2.1",
     "qs": "4.0.0",
     "queryfilter": "0.0.4",
     "range_check": "1.4.0",
@@ -145,7 +146,10 @@
     "url": "https://github.com/keystonejs/keystone/issues"
   },
   "scripts": {
-    "build": "NODE_ENV=production webpack --bail",
+    "prepublish": "npm run build",
+    "postinstall": "postinstall-build admin/public/js/common.js 'npm run build'",
+    "clean-build": "rm admin/public/js/*.js || true",
+    "build": "npm run clean-build && NODE_ENV=production webpack --bail",
     "build-dev": "webpack --bail",
     "build-dev-watch": "webpack --watch",
     "pretest": "npm run lint && node test/pretest.js",
