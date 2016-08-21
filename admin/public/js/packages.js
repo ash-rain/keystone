@@ -462,8 +462,8 @@ var r=e("react"),o=e("classnames"),a=r.createClass({displayName:"Page",propTypes
 return r.createElement("button",{className:a,onClick:this.onSelect},t)}})
 t.exports=r.createClass({displayName:"Pagination",propTypes:{className:r.PropTypes.string,currentPage:r.PropTypes.number.isRequired,limit:r.PropTypes.number,onPageSelect:r.PropTypes.func,pageSize:r.PropTypes.number.isRequired,plural:r.PropTypes.string,singular:r.PropTypes.string,style:r.PropTypes.object,total:r.PropTypes.number.isRequired},renderCount:function(){var e="",t=this.props,n=t.currentPage,o=t.pageSize,a=t.plural,i=t.singular,s=t.total
 if(s)if(s>o){var u=o*(n-1)+1,l=Math.min(u+o-1,s)
-e="Showing "+u+" to "+l+" of "+s}else e="Showing "+s,s>1&&a?e+=" "+a:1===s&&i&&(e+=" "+i)
-else e="No "+(a||"records")
+e="Показване на "+u+" до "+l+" от "+s}else e="Показване на "+s,s>1&&a?e+=" "+a:1===s&&i&&(e+=" "+i)
+else e="Няма "+(a||"записи")
 return r.createElement("div",{className:"Pagination__count"},e)},onPageSelect:function(e){this.props.onPageSelect&&this.props.onPageSelect(e)},renderPages:function(){if(this.props.total<=this.props.pageSize)return null
 var e=[],t=this.props,n=t.currentPage,o=t.pageSize,i=t.total,s=t.limit,u=Math.ceil(i/o),l=1,c=u
 if(s&&s<u){var p=Math.floor(s/2),f=p+s%2-1
