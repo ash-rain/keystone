@@ -170,8 +170,8 @@ const ListView = React.createClass({
 		this.setState({
 			confirmationDialog: {
 				isOpen: true,
-				label: 'Delete',
-				body: <p>Are you sure you want to delete {itemCount}?<br /><br />This cannot be undone.</p>,
+				label: 'Изтриване',
+				body: <p>Сигурни ли сте, че искате да изтриете {itemCount}?<br /><br />Това действие е необратимо.</p>,
 				onConfirmation: () => {
 					this.props.dispatch(deleteItems(itemIds));
 					this.toggleManageMode();
@@ -334,8 +334,8 @@ const ListView = React.createClass({
 		this.setState({
 			confirmationDialog: {
 				isOpen: true,
-				label: 'Delete',
-				body: `Are you sure you want to delete <strong>${item.name}</strong>?<br /><br />This cannot be undone.`,
+				label: 'Изтриване',
+				body: `Сигурни ли сте, че искате да изтриете <strong>${item.name}</strong>?<br /><br />Това действие е необратимо.`,
 				onConfirmation: () => {
 					this.props.dispatch(deleteItem(item.id));
 					this.removeConfirmationDialog();
@@ -394,7 +394,7 @@ const ListView = React.createClass({
 		// display the button if create allowed
 		const button = !currentList.nocreate ? (
 			<GlyphButton color="success" glyph="plus" position="left" onClick={onClick} data-e2e-list-create-button="no-results">
-				Create {currentList.singular}
+				Създай {currentList.singular}
 			</GlyphButton>
 		) : null;
 
@@ -408,7 +408,7 @@ const ListView = React.createClass({
 					/>
 				) : null}
 				<BlankState style={{ marginTop: 40 }}>
-					<BlankState.Heading>No {this.props.currentList.plural.toLowerCase()} found&hellip;</BlankState.Heading>
+					<BlankState.Heading>Няма намерени {this.props.currentList.plural.toLowerCase()}&hellip;</BlankState.Heading>
 					{button}
 				</BlankState>
 			</Container>
@@ -477,13 +477,13 @@ const ListView = React.createClass({
 		if (this.props.items.results.length) return null;
 		let matching = this.props.active.search;
 		if (this.props.active.filters.length) {
-			matching += (matching ? ' and ' : '') + pluralize(this.props.active.filters.length, '* filter', '* filters');
+			matching += (matching ? ' и ' : '') + pluralize(this.props.active.filters.length, '* филтър', '* филтри');
 		}
-		matching = matching ? ' found matching ' + matching : '.';
+		matching = matching ? ' отговарящи на ' + matching : '.';
 		return (
 			<BlankState style={{ marginTop: 20, marginBottom: 20 }}>
 				<span className="octicon octicon-search" style={{ fontSize: 32, marginBottom: 20 }} />
-				<BlankState.Heading>No {this.props.currentList.plural.toLowerCase()}{matching}</BlankState.Heading>
+				<BlankState.Heading>Няма {this.props.currentList.plural.toLowerCase()}{matching}</BlankState.Heading>
 			</BlankState>
 		);
 	},

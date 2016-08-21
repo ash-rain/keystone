@@ -60,7 +60,7 @@ const ItemsTable = React.createClass({
 		const cellMap = this.props.columns.map(col => {
 			const isSelected = activeSortPath && activeSortPath.path === col.path;
 			const isInverted = isSelected && activeSortPath.invert;
-			const buttonTitle = `Sort by ${col.label}${isSelected && !isInverted ? ' (desc)' : ''}`;
+			const buttonTitle = `Подреждане по ${col.label}${isSelected && !isInverted ? ' (низх.)' : ''}`;
 			const colClassName = classnames('ItemList__sort-button th-sort', {
 				'th-sort--asc': isSelected && !isInverted,
 				'th-sort--desc': isInverted,

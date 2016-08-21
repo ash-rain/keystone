@@ -26,7 +26,7 @@ const ListFilters = ({ dispatch, filters }) => {
 		currentFilters.push(
 			<Pill
 				key="listFilters__clear"
-				label="Clear All"
+				label="Изчистване"
 				onClick={dispatchClearAllFilters}
 			/>
 		);

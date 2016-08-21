@@ -29,7 +29,7 @@ function ListManagement ({
 				onClick={handleDelete}
 				position="left"
 				variant="link">
-				Delete
+				Изтриване
 			</GlyphButton>
 		</Section>
 	);
@@ -39,8 +39,8 @@ function ListManagement ({
 		<Section>
 			<Button
 				onClick={() => handleSelect('all')}
-				title="Select all rows (including those not visible)">
-				All <small style={buttonNoteStyles}>({itemCount})</small>
+				title="Избиране на всички записи (вкл. непоказани)">
+				Всички <small style={buttonNoteStyles}>({itemCount})</small>
 			</Button>
 		</Section>
 	);
@@ -49,13 +49,13 @@ function ListManagement ({
 			<Group contiguous>
 				{selectAllButton}
 				<Section>
-					<Button onClick={() => handleSelect('visible')} title="Select all rows">
-						{itemCount > itemsPerPage ? 'Page ' : 'All '}
+					<Button onClick={() => handleSelect('visible')} title="Избиране на всички записи">
+						{itemCount > itemsPerPage ? 'Страница ' : 'Всички '}
 						<small style={buttonNoteStyles}>({itemCount > itemsPerPage ? itemsPerPage : itemCount})</small>
 					</Button>
 				</Section>
 				<Section>
-					<Button onClick={() => handleSelect('none')} title="Deselect all rows">None</Button>
+					<Button onClick={() => handleSelect('none')} title="Изчистване на избраните записи">Нищо</Button>
 				</Section>
 			</Group>
 		</Section>
@@ -65,7 +65,7 @@ function ListManagement ({
 	const selectedCountText = isOpen ? (
 		<Section>
 			<span style={{ color: '#666', display: 'inline-block', lineHeight: '2.4em', margin: 1 }}>
-				{checkedItemCount} selected
+				{checkedItemCount} избрани
 			</span>
 		</Section>
 	) : null;
@@ -76,7 +76,7 @@ function ListManagement ({
 			<Group style={{ float: 'left', marginRight: '.75em', marginBottom: 0 }}>
 				<Section>
 					<Button active={isOpen} onClick={() => handleToggle(!isOpen)}>
-						Manage
+						Действия
 					</Button>
 				</Section>
 				{selectButtons}

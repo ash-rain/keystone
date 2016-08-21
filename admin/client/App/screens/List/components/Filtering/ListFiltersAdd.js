@@ -95,7 +95,7 @@ var ListFiltersAdd = React.createClass({
 			<Popout.Pane onLayout={this.setPopoutHeight} key="list">
 				<Popout.Body>
 					<FormField style={{ borderBottom: '1px dashed rgba(0,0,0,0.1)', paddingBottom: '1em' }}>
-						<FormInput ref="search" value={this.state.searchString} onChange={this.updateSearch} placeholder="Find a filter..." />
+						<FormInput ref="search" value={this.state.searchString} onChange={this.updateSearch} placeholder="Търсене на филтър..." />
 					</FormField>
 					{popoutList}
 				</Popout.Body>
@@ -131,14 +131,14 @@ var ListFiltersAdd = React.createClass({
 					active={this.state.isOpen}
 					id="listHeaderFilterButton"
 					glyph="eye"
-					label="Filter"
+					label="Филтър"
 					onClick={this.state.isOpen ? this.closePopout : this.openPopout}
 				/>
 				<Popout isOpen={this.state.isOpen} onCancel={this.closePopout} relativeToID="listHeaderFilterButton">
 					<Popout.Header
 						leftAction={selectedField ? this.navigateBack : null}
 						leftIcon={selectedField ? 'chevron-left' : null}
-						title={selectedField ? selectedField.label : 'Filter'}
+						title={selectedField ? selectedField.label : 'Филтър'}
 						transitionDirection={selectedField ? 'next' : 'prev'} />
 					<Transition
 						className={popoutPanesClassname}

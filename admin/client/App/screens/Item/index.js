@@ -106,9 +106,9 @@ var ItemView = React.createClass({
 				&& detail.path === '_id') {
 				return (
 					<Container>
-						<p>Item not found!</p>
+						<p>Записът не е намерен!</p>
 						<Link to={`${Keystone.adminPath}/${this.props.routeParams.listId}`}>
-							Go to list
+							Към списъка
 						</Link>
 					</Container>
 				);
